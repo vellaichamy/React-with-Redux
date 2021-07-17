@@ -1,16 +1,23 @@
 import React from 'react';
 import './style.css';
 
-export default function Converting() {
+function getButtonText() {
+  return 'Click on me!';
+}
+
+// function Converting() {
+const Converting = () => {
   return (
     <div>
-      <label class="label" for="name">
+      <label className="label" for="name">
         Enter name:
       </label>
       <input id="name" type="text" />
       <button style={{ backgroundColor: 'blue', color: 'white' }}>
-        Submit
+        {getButtonText()}
       </button>
     </div>
   );
-}
+};
+
+export default Converting;
