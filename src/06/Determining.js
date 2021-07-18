@@ -6,7 +6,7 @@ if (module.hot) {
   module.hot.accept();
 }
 
-class PassingState extends React.Component {
+class Determining extends React.Component {
   state = { lat: null, errorMessage: '' };
 
   componentDidMount() {
@@ -30,4 +30,4 @@ class PassingState extends React.Component {
   }
 }
 
-export default PassingState;
+export default Determining;
