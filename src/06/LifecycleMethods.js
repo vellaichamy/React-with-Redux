@@ -4,23 +4,14 @@ import ReactDOM from 'react-dom';
 if (module.hot) {
   module.hot.accept();
 }
+// const ApprovalCard = () => {
+class LifecycleMethods extends React.Component {
+  state = { lat: null, errorMessage: '' };
 
-class StateReactComponents extends React.Component {
-  constructor(props) {
-    super(props);
-
-    // THIS IS THE ONLY TIME we do direct assignment
-    // to this.state
-    this.state = { lat: null, errorMessage: '' };
-
+  componentDidMount() {
     window.navigator.geolocation.getCurrentPosition(
-      position => {
-        // we called setstate!!!!
-        this.setState({ lat: position.coords.latitude });
-      },
-      err => {
-        this.setState({ errorMessage: err.message });
-      }
+      position => this.setState({ lat: position.coords.latitude }),
+      err => this.setState({ errorMessage: err.message })
     );
   }
 
@@ -38,5 +29,4 @@ class StateReactComponents extends React.Component {
   }
 }
 
-export default StateReactComponents;
-
+export default LifecycleMethods;
