@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-import App from './06/Icons';
+import App from './07/components/App';
+// import App from './06/Icons';
 // import App from './06/Determining';
 // import App from './06/PassingState';
 // import App from './06/LifecycleMethods';
