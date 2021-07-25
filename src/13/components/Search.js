@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const Search = () => {
-  const [term, setTerm] = useState('programming');
+  const [term, setTerm] = useState('React JS');
   const [debouncedTerm, setDebouncedTerm] = useState(term);
   const [results, setResults] = useState([]);
 
@@ -24,8 +24,8 @@ const Search = () => {
           list: 'search',
           origin: '*',
           format: 'json',
-          srsearch: debouncedTerm,
-        },
+          srsearch: debouncedTerm
+        }
       });
 
       setResults(data.query.search);
@@ -33,7 +33,7 @@ const Search = () => {
     search();
   }, [debouncedTerm]);
 
-  const renderedResults = results.map((result) => {
+  const renderedResults = results.map(result => {
     return (
       <div key={result.pageid} className="item">
         <div className="right floated content">
@@ -46,7 +46,7 @@ const Search = () => {
         </div>
         <div className="content">
           <div className="header">{result.title}</div>
-          <span dangerouslySetInnerHTML={{ __html: result.snippet }}></span>
+          <span dangerouslySetInnerHTML={{ __html: result.snippet }} />
         </div>
       </div>
     );
@@ -59,7 +59,7 @@ const Search = () => {
           <label>Enter Search Term</label>
           <input
             value={term}
-            onChange={(e) => setTerm(e.target.value)}
+            onChange={e => setTerm(e.target.value)}
             className="input"
           />
         </div>
