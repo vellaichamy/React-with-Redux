@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import App from './10/components/App';
+import App from './12/App';
+// import App from './10/components/App';
 // import App from './09/components/App';
 // import App from './08/components/App';
 // import App from './07/components/App';
