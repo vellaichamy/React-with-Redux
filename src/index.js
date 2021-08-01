@@ -1,10 +1,15 @@
+import './style.css';
+import React from 'react';
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-import App from './19/components/App';
+import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+// import App from './components/App'
+import configureStore from './configureStore';
+// import App from './19/components/App';
 // import App from './18/components/App';
 // import App from './17/components/App';
-// import App from './14/components/App';
+import App from './14/components/App';
 // import App from './13/App';
 // import App from './12/App';
 // import App from './10/components/App';
@@ -26,3 +31,12 @@ if (module.hot) {
 }
 
 ReactDOM.render(<App />, document.getElementById('root'));
+
+// const store = configureStore();
+
+// render(
+//   <Provider store={store}>
+//     <App />
+//   </Provider>,
+//   document.getElementById('root')
+// );
