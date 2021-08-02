@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 
-
-
 // import App from './components/App'
 import configureStore from './configureStore';
 // import App from './19/components/App';
-// import App from './18/components/App';
-import App from './17/components/App';
+import reducers from './18/reducers';
+import App from './18/components/App';
+// import reducers from './17/reducers';
+// import App from './17/components/App';
 // import App from './14/components/App';
 // import App from './13/App';
 // import App from './12/App';
@@ -33,14 +33,30 @@ import App from './17/components/App';
 
 // ReactDOM.render(<App />, document.getElementById('root'));
 
+// 18
 
-// 17
-import reducers from './17/reducers';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+
+// import App from './components/App';
+// import reducers from './reducers';
+
+const store = createStore(reducers, applyMiddleware(thunk));
 
 ReactDOM.render(
-  <Provider store={createStore(reducers)}>
+  <Provider store={store}>
     <App />
   </Provider>,
   document.querySelector('#root')
 );
 
+// 17
+// ReactDOM.render(
+//   <Provider store={createStore(reducers)}>
+//     <App />
+//   </Provider>,
+//   document.querySelector('#root')
+// );
