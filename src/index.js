@@ -1,15 +1,16 @@
-import './style.css';
-import React from 'react';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { render } from 'react-dom';
 import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+
+
+
 // import App from './components/App'
 import configureStore from './configureStore';
 // import App from './19/components/App';
 // import App from './18/components/App';
-// import App from './17/components/App';
-import App from './14/components/App';
+import App from './17/components/App';
+// import App from './14/components/App';
 // import App from './13/App';
 // import App from './12/App';
 // import App from './10/components/App';
@@ -26,17 +27,20 @@ import App from './14/components/App';
 // import App from './Converting';
 // import App from "./App";
 
-if (module.hot) {
-  module.hot.accept();
-}
+// if (module.hot) {
+//   module.hot.accept();
+// }
 
-ReactDOM.render(<App />, document.getElementById('root'));
+// ReactDOM.render(<App />, document.getElementById('root'));
 
-// const store = configureStore();
 
-// render(
-//   <Provider store={store}>
-//     <App />
-//   </Provider>,
-//   document.getElementById('root')
-// );
+// 17
+import reducers from './17/reducers';
+
+ReactDOM.render(
+  <Provider store={createStore(reducers)}>
+    <App />
+  </Provider>,
+  document.querySelector('#root')
+);
+
