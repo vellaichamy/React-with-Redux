@@ -4,9 +4,10 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 
+import App from './20/components/App';
 import configureStore from './configureStore';
-import reducers from './19/reducers';
-import App from './19/components/App';
+// import reducers from './19/reducers';
+// import App from './19/components/App';
 // import reducers from './18/reducers';
 // import App from './18/components/App';
 // import reducers from './17/reducers';
@@ -45,14 +46,15 @@ import App from './19/components/App';
 // import App from './components/App';
 // import reducers from './reducers';
 
-const store = createStore(reducers, applyMiddleware(thunk));
+// 19
+// const store = createStore(reducers, applyMiddleware(thunk));
 
-ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-  document.querySelector('#root')
-);
+// ReactDOM.render(
+//   <Provider store={store}>
+//     <App />
+//   </Provider>,
+//   document.querySelector('#root')
+// );
 
 // 17
 // ReactDOM.render(
@@ -61,3 +63,5 @@ ReactDOM.render(
 //   </Provider>,
 //   document.querySelector('#root')
 // );
+
+ReactDOM.render(<App />, document.querySelector('#root'));
