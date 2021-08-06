@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import GoogleAuth from './GoogleAuth';
 
 const Header = () => {
   return (
@@ -8,24 +9,10 @@ const Header = () => {
         Streamy
       </Link>
       <div className="right menu">
-        <Link to="streams/new" className="item">
-          create Streams
+        <Link to="/" className="item">
+          All Streams
         </Link>
-      </div>
-      <div className="right menu">
-        <Link to="streams/edit" className="item">
-          edit Streams
-        </Link>
-      </div>
-      <div className="right menu">
-        <Link to="streams/delete" className="item">
-          delete Streams
-        </Link>
-      </div>
-      <div className="right menu">
-        <Link to="streams/show" className="item">
-          show Streams
-        </Link>
+        <GoogleAuth />
       </div>
     </div>
   );
