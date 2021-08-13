@@ -6,14 +6,14 @@ import thunk from 'redux-thunk';
 
 
 
-import App from './21/components/App';
+// import App from './21/components/App';
 import configureStore from './configureStore';
 // import reducers from './19/reducers';
 // import App from './19/components/App';
 // import reducers from './18/reducers';
 // import App from './18/components/App';
 // import reducers from './17/reducers';
-// import App from './17/components/App';
+import App from './17/components/App';
 // import App from './14/components/App';
 // import App from './13/App';
 // import App from './12/App';
