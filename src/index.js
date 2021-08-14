@@ -2,18 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
-// applyMiddleware
 import thunk from 'redux-thunk';
+import configureStore from './configureStore';
 
 // import App from './21/components/App';
-import configureStore from './configureStore';
-// import reducers from './19/reducers';
-// import App from './19/components/App';
+
+import reducers from './19/reducers';
+import App from './19/components/App';
+const store = createStore(reducers, applyMiddleware(thunk));
 
 // import rootReducer from './18/reducers';
-import reducers from './18/reducers';
-import App from './18/components/App';
-const store = createStore(reducers, applyMiddleware(thunk));
+// import reducers from './18/reducers';
+// import App from './18/components/App';
+// const store = createStore(reducers, applyMiddleware(thunk));
 
 // import rootReducer from './17/reducers';
 // import reducers from './17/reducers';
