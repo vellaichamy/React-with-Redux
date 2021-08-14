@@ -21,13 +21,6 @@ import rootReducer from './17/reducers';
 import reducers from './17/reducers';
 import App from './17/components/App';
 
-const store = createStore(rootReducer);
-ReactDOM.render(
-  <Provider store={createStore(reducers)}>
-    <App />
-  </Provider>,
-  document.querySelector('#root')
-);
 // import App from './14/components/App';
 // import App from './13/App';
 // import App from './12/App';
@@ -73,11 +66,12 @@ ReactDOM.render(
 // );
 
 // 17
-// ReactDOM.render(
-//   <Provider store={createStore(reducers)}>
-//     <App />
-//   </Provider>,
-//   document.querySelector('#root')
-// );
 
+const store = createStore(rootReducer);
+ReactDOM.render(
+  <Provider store={createStore(reducers)}>
+    <App />
+  </Provider>,
+  document.querySelector('#root')
+);
 // ReactDOM.render(<App />, document.querySelector('#root'));
