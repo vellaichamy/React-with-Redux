@@ -1,25 +1,24 @@
 import React from 'react';
-import { render } from 'react-dom';
-import { createStore } from 'redux';
-import { Provider } from 'react-redux';
 import ReactDOM from 'react-dom';
-// import App from './components/App'
-// import rootReducer from './reducers'
-
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
+// applyMiddleware
 import thunk from 'redux-thunk';
 
 // import App from './21/components/App';
 import configureStore from './configureStore';
 // import reducers from './19/reducers';
 // import App from './19/components/App';
-// import reducers from './18/reducers';
-// import App from './18/components/App';
 
-import rootReducer from './17/reducers';
-import reducers from './17/reducers';
-import App from './17/components/App';
+// import rootReducer from './18/reducers';
+import reducers from './18/reducers';
+import App from './18/components/App';
+const store = createStore(reducers, applyMiddleware(thunk));
+
+// import rootReducer from './17/reducers';
+// import reducers from './17/reducers';
+// import App from './17/components/App';
+// const store = createStore(rootReducer);
 
 // import App from './14/components/App';
 // import App from './13/App';
@@ -66,10 +65,9 @@ import App from './17/components/App';
 // );
 
 // 17
-
-const store = createStore(rootReducer);
+// createStore(reducers
 ReactDOM.render(
-  <Provider store={createStore(reducers)}>
+  <Provider store={store}>
     <App />
   </Provider>,
   document.querySelector('#root')
