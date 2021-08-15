@@ -5,11 +5,11 @@ import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import configureStore from './configureStore';
 
-// import App from './21/components/App';
+import App from './21/components/App';
 
-import reducers from './19/reducers';
-import App from './19/components/App';
-const store = createStore(reducers, applyMiddleware(thunk));
+// import reducers from './19/reducers';
+// import App from './19/components/App';
+// const store = createStore(reducers, applyMiddleware(thunk));
 
 // import rootReducer from './18/reducers';
 // import reducers from './18/reducers';
@@ -67,10 +67,13 @@ const store = createStore(reducers, applyMiddleware(thunk));
 
 // 17
 // createStore(reducers
-ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-  document.querySelector('#root')
-);
-// ReactDOM.render(<App />, document.querySelector('#root'));
+// ReactDOM.render(
+//   <Provider store={store}>
+//     <App />
+//   </Provider>,
+//   document.querySelector('#root')
+// );
+
+
+ReactDOM.render(<App />, document.querySelector('#root'));
+
