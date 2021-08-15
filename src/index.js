@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
+
 import thunk from 'redux-thunk';
 import configureStore from './configureStore';
 
-import App from './21/components/App';
+import App from './23/components/App';
+// import App from './21/components/App';
 
 // import reducers from './19/reducers';
 // import App from './19/components/App';
@@ -53,7 +55,16 @@ import App from './21/components/App';
 // import thunk from 'redux-thunk';
 
 // import App from './components/App';
-// import reducers from './reducers';
+import reducers from './21/reducers';
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store = createStore(reducers, composeEnhancers(applyMiddleware()));
+
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.querySelector('#root')
+);
 
 // 19
 // const store = createStore(reducers, applyMiddleware(thunk));
@@ -74,6 +85,4 @@ import App from './21/components/App';
 //   document.querySelector('#root')
 // );
 
-
-ReactDOM.render(<App />, document.querySelector('#root'));
-
+// ReactDOM.render(<App />, document.querySelector('#root'));
